@@ -1,7 +1,7 @@
 <?php
-
 class Report
 {
+    private string $path;
     private int $salesman;
     private float $salary;
     private int $customer;
@@ -9,6 +9,7 @@ class Report
 
     public function __construct()
     {
+        $this->path = "C:\\xampp\\htdocs\\fopen\\";
         $this->salesman = 0;
         $this->salary = 0;
         $this->customer = 0;
@@ -25,7 +26,7 @@ class Report
 
     private function read(): void
     {
-        $file = "C:\\xampp\\htdocs\\fopen\\data\\in\\loja.dat";
+        $file = $this->path."data\\in\\loja.dat";
         $fileSize = filesize($file);
         
         $file = fopen($file, "r");
@@ -62,7 +63,7 @@ class Report
 
     private function write(): bool
     {
-        $file = "C:\\xampp\\htdocs\\fopen\\data\\out\\loja_relatorio.done.dat";
+        $file = $this->path."data\\out\\loja_relatorio.done.dat";
         $file = fopen($file, 'w');
 
         $salesman = "numero de vendedores: " . $this->salesman.chr(13).chr(10);
