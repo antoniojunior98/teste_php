@@ -9,7 +9,7 @@ class Report
 
     public function __construct()
     {
-        $this->path = "C:\\xampp\\htdocs\\fopen\\";
+        $this->path = "C:\\xampp\\htdocs\\teste_php-main\\";
         $this->salesman = 0;
         $this->salary = 0;
         $this->customer = 0;
